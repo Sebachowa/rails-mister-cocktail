@@ -17,8 +17,9 @@ class DosesController < ApplicationController
   end
 
   def destroy
-    @cocktail = Cocktail.find(params[:cocktail_id])
-    @doses =
-    @dose = @cocktail.doses.destroy
+    @dose = Dose.find(params[:id])
+    @dose.destroy
+
+    redirect_to cocktail_path(@dose.cocktail)
   end
 end
