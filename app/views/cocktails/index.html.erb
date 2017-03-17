@@ -1,18 +1,23 @@
 <div class="banner">
-      <div class="banner-content">
-        <h1>Cocktail World</h1>
-        <p>Find the perfect cocktail</p>
-        <a href="#content" class="btn btn-primary btn-lg">GO!</a>
-      </div>
-    </div>
+  <div class="banner-content">
+    <h1>Cocktail World</h1>
+    <p>Find the perfect cocktail</p>
+    <a href="#content" class="btn btn-primary btn-lg">GO!</a>
+  </div>
+</div>
 <div class="container" id="content">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-sm-6 col-md-4 space">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('http://lorempixel.com/400/200/nightlife');">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cocktail.photo? ? cl_image_path(cocktail.photo.path, height: 300, width: 400, crop: :fill) : ''; %>')">
+          <div class="card-user">
+            <%= link_to cocktail_path(cocktail), { method: :delete } do %>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <% end %>
+          </div>
           <div class="card-description">
             <h2><%=cocktail.name.capitalize%></h2>
-            <p> Write something </p>
+            <p></p>
           </div>
           <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
         </div>

@@ -1,11 +1,26 @@
-<div class="drink-container text-center">
-  <h1><%= @cocktail.name %></h1>
-  <%= link_to "Add ingredients", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+<div class="drink-container text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= @cocktail.photo? ? cl_image_path(@cocktail.photo.path, height: 200, width: 600, crop: :fill) : '' %>'); background-repeat: no-repeat; background-size: cover;">
+  <div class="banner-title">
+    <h1><%= @cocktail.name.capitalize %></h1>
+    <%= link_to "Add ingredients", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+  </div>
 </div>
-<div class="doses-container text-center">
-  <% @dose.each do |dose| %>
-    <p><%= dose.description %><%= link_to "Del", dose_path(dose), { class: "btn btn-danger", method: :delete }%></p>
-  <% end %>
+<div class="ingredient-title text-center">
+  <h3>Ingredients:</h3>
 </div>
-
-
+<div class="instruction-container text-center">
+  <div class="doses-container">
+    <div class="row">
+      <% @dose.each do |dose| %>
+        <div class="col-xs-6 col-sm-4 col-md-3">
+          <div class="doses">
+            <p><%= dose.description.capitalize %> of <%= dose.ingredient.name %></p>
+            <img id="ingredient-thumbnail" src="<%= "http://www.thecocktaildb.com/images/ingredients/#{dose.ingredient.name}.png" %>" alt="<%= dose.ingredient.name %>">
+            <%= link_to dose_path(dose), { method: :delete } do %>
+              <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

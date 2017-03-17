@@ -11,6 +11,16 @@
   position: absolute;
   right: 10px;
   top: 10px;
+  z-index: 9999999;
+  .fa {
+    color: white;
+    &:hover {
+      color: red;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
+
 }
 .card-category {
   position: absolute;
