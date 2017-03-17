@@ -1,6 +1,9 @@
-<%= simple_form_for([@cocktail, @dose]) do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :description, placeholder: "description" %>
-  <%= f.input :ingredient_id, collection: Ingredient.all.order(name: :asc) %>
-  <%= f.submit %>
-<% end %>
+<h3 class="text-center">Add an ingredient to the cocktail:</h2>
+<div class="form text-center">
+  <%= simple_form_for([@cocktail, @dose]) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :description, placeholder: "description" %>
+    <%= f.input :ingredient_id, collection: Ingredient.all.order(name: :asc) %>
+    <%= f.submit %>
+  <% end %>
+</div>

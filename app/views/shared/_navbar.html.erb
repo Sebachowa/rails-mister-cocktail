@@ -1,10 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <%= link_to cocktails_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
-  <% end %>
-
+  <%= link_to "Cocktail World", cocktails_path, class: "navbar-wagon-brand" %>
     <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "New Cocktail"), new_cocktail_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "New Cocktail →"), new_cocktail_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 

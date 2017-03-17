@@ -1,6 +1,9 @@
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :name, placeholder: "Cocktail name" %>
-  <%= f.input :photo, as: :attachinary %>
-  <%= f.submit %>
-<% end %>
+<h2 class="text-center">Add your cocktail:</h2>
+<div class="form text-center">
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :name, placeholder: "Cocktail name" %>
+    <%= f.input :photo, as: :attachinary %>
+    <%= f.submit %>
+  <% end %>
+</div>

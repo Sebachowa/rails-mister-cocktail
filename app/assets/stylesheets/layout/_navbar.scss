@@ -20,8 +20,17 @@
 }
 
 /* Navbar logo */
-.navbar-wagon-brand img {
-  width: 40px;
+.navbar-wagon-brand {
+  color: black;
+  font-family: raleway;
+  font-weight: lighter;
+  background-color: rgba( 255, 255, 255, 0);
+  &:hover {
+    color: red;
+    text-decoration: none;
+    transition: all 0.5s ease;
+  }
+
 }
 
 /* Navbar right section (with form, links, button) */
@@ -36,6 +45,8 @@
   flex: 0 1 auto;
   cursor: pointer;
   padding: 0 20px;
+  font-family: raleway;
+  font-weight: lighter;
 }
 
 /* Navbar standard link */
@@ -54,13 +65,15 @@
   padding: 0 20px;
   border-radius: 20em;
   line-height: 40px;
-  background-color: #D23333;
-  color: white;
+  font-family: raleway;
+  font-weight: lighter;
+  background-color: rgba( 255, 255, 255, 0);
   font-size: 14px;
-  border: 2px solid #D23333;
+  color: black;
 }
 .navbar-wagon-button:hover {
   color: white;
+  transition: all 0.5s ease;
   background: #D23333;
   border-color: #ac2626;
 }
